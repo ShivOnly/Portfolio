@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shiv Thapa | AI & Data Science</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="site-title">Shiv Thapa</h1>
+    </div>
+  </header>
+
+  <!-- Sticky Nav -->
+  <nav class="sticky-nav">
+  <a href="#about">About</a>
+  <a href="#skills">Skills & Proficiencies</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  <a href="https://github.com/ShivOnly/Resume/blob/main/Shivthapa_Resume.pdf" target="_blank">Resume</a>
+</nav>
+
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container">
+      <h2 id="hero-line">
+        <span id="typed-intro"></span>
+        <span id="dynamic-role" class="gradient-role"></span>
+      </h2>
+      <p>I build intelligent solutions, analyze complex data, and help others learn AI and data science with ease.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <br>
+      <h2>About Me</h2>
+      <p id="about-typing"></p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills & Proficiencies</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>JavaScript</h3>
+          <p>Proficient in building modern web applications using <strong>React.js</strong> framework.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Python</h3>
+          <p>Experienced in AI & Data Science workflows with <strong>LangChain</strong>, <strong>ChromaDB</strong> (vector database), <strong>tokens handling</strong>, <strong>LLMs</strong>, and <strong>Django</strong>.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Styling</h3>
+          <p>Strong front-end design with <strong>Bootstrap</strong>, <strong>CSS</strong>, and <strong>HTML5</strong> for responsive layouts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3><a href="https://github.com/ShivOnly/AI-Career-Chatbot" target="_blank"><b>AI Career Chatbot</b></a></h3>
+          <p>Uses LLMs to guide users through job paths, skill gaps, and study materials tailored to their goals.</p>
+          <a href="https://github.com/ShivOnly/AI-Career-Chatbot" target="_blank"><b>GitHub</b></a>
+        </div>
+
+        <div class="project-card">
+          <h3><a href="https://github.com/ShivOnly/WeatherReport" target="_blank"><b>Weather Summarizer</b></a></h3>
+          <p>Transforms raw weather data into natural language using local AI models like LLaMA.</p>
+          <p>
+            <a href="https://github.com/ShivOnly/WeatherReport" target="_blank"><b>GitHub</b></a>
+          </p>
+        </div>
+
+        <div class="project-card">
+  <h3>GST Application (UI/UX)</h3>
+  <p>Designed and prototyped a GST-based application with focus on seamless user experience and modern UI elements using Figma.</p>
+  <p><a href="https://www.figma.com/proto/SRUHgyvE2k68OYhk1UZua5/Running-app-Shiv?node-id=0-1&t=W6pRIexB8eLEcmya-1" target="_blank">View Interactive Prototype</a></p>
+  <a href="https://unstop.com/certificate-preview/cd361262-e4b6-4b83-b0da-e4b5748b987d" target="_blank">Certificate by IIT Roorkee</a>
+</div>
+</section>
+
+  <!-- Resume -->
+  <section id="resume">
+    <div class="container">
+      <h2>Resume</h2>
+      <p>You can view or download my latest resume here:</p>
+      <a class="resume-btn" href="https://github.com/ShivOnly/Resume/blob/main/Shivthapa_Resume.pdf" target="_blank">
+        📄 View Resume
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email:
+        <a href="mailto:manbthapa197@gmail.com?subject=AI%20Collaboration&body=Hi%20Shiv,%0D%0AI%20am%20interested%20in%20collaborating%20on%20an%20AI%20or%20data%20science%20project.">
+          manbthapa197@gmail.com
+        </a>
+      </p>
+      <p>Phone No: <a href="#">+91 6204253484</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Shiv Thapa — AI & Data Science Portfolio</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const introText = "Hi, I am ";
+    const roles = [
+      "Web Developer",
+      "AI Expert",
+      "Data Science Analyst",
+      "Machine Learning Engineer",
+      "Educator & Mentor"
+    ];
+
+    const introElement = document.getElementById("typed-intro");
+    const roleElement = document.getElementById("dynamic-role");
+    const aboutElement = document.getElementById("about-typing");
+
+    let introIndex = 0;
+    let roleIndex = 0;
+
+    function typeIntro() {
+      if (introIndex < introText.length) {
+        introElement.textContent += introText.charAt(introIndex);
+        introIndex++;
+        setTimeout(typeIntro, 100);
+      } else {
+        startRoleRotation();
+        typeAbout();
+      }
+    }
+
+    function startRoleRotation() {
+      roleElement.textContent = roles[roleIndex];
+      setInterval(() => {
+        roleIndex = (roleIndex + 1) % roles.length;
+        roleElement.textContent = roles[roleIndex];
+      }, 2500);
+    }
+
+    function typeAbout() {
+      const aboutText = "I’m passionate about artificial intelligence, machine learning, and data-driven technologies. Whether it's crafting AI applications or educating others, I love making complex topics simple and accessible.";
+      let aboutIndex = 0;
+      function typeChar() {
+        if (aboutIndex < aboutText.length) {
+          aboutElement.textContent += aboutText.charAt(aboutIndex);
+          aboutIndex++;
+          setTimeout(typeChar, 25);
+        }
+      }
+      typeChar();
+    }
+
+    window.onload = typeIntro;
+  </script>
+</body>
+</html>
